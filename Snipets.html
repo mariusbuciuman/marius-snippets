@@ -1,23 +1,13 @@
 <script>
-var $ = jQuery;
-$( document ).ready(function() {
-//$("th.product-name.cart-name").html('<th class="product-name cart-name">Produkte</th>');
-//$("th.product-price.quote-cart-price").html('<th class="product-price quote-cart-price">Preis</th>');
-
-$("th.col-sku").html('Art. Nr.');
-
-});
-</script>
-
-
-<script>
-var $ = jQuery;
-$( document ).ready(function() {
-$("th.product-name.cart-name").html('<th class="product-name cart-name">Produkte</th>');
-$("th.product-price.quote-cart-price").html('<th class="product-price quote-cart-price">Preis</th>');
-});
-</script>
-
+  var $ = jQuery;
+  $( document ).ready(function() {
+  //$("th.product-name.cart-name").html('<th class="product-name cart-name">Produkte</th>');
+  //$("th.product-price.quote-cart-price").html('<th class="product-price quote-cart-price">Preis</th>');
+  
+  $("th.col-sku").html('Art. Nr.');
+  
+  });
+  </script>
 
 Slick CDN
 
@@ -26,21 +16,56 @@ Slick CDN
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1/slick/slick-theme.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1/slick/slick.min.css">
 
+WP Smart Preloader
 
+//EQUILIZE DIVS ON PAGE (needs document ready function if are some display:none; elements in that div.)
 
+  $( document ).ready(function() {
+  var maxHeight = 0;
 
+$(".free-resources-wrapper .et_pb_post").each(function(){
+   if ($(this).height() > maxHeight) { maxHeight = $(this).height(); }
+});
 
+$(".free-resources-wrapper .et_pb_post").height(maxHeight);
+  });
 
+  Show and hide jQuery
+
+  <script>
+    var $ = jQuery;
+    $( document ).ready(function() {
+    $(".our-services-button").hover(
+          function() { $(".our-services-sub-menu").show(); },
+          function() { $(".our-services-sub-menu").hide(); }
+     );
+    
+    });
+    </script>
+
+Display Flex | Justify-Content Center
 
 display:flex;
 flex-direction: column;
 justify-content:center;
 
-
-
-
 Sa faci butonul sa fie jos: regulile astea ar trebui puse pe coloana
 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+
+Buton CTA - DIVI
+
+.menu-cta a, .et-fixed-header #top-menu li.menu-cta a {
+  padding: 13px 45px!important;
+  background-color: #fff;
+  color: #052048!important;
+  border: 2px solid #fff!important;
+  border-radius: 0px;
+}
+.menu-cta a:hover, .et-fixed-header #top-menu li.menu-cta a:hover {
+background-color: transparent;
+color:#fff!important;
+opacity:1!important;
+}
